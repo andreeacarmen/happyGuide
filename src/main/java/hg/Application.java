@@ -24,8 +24,7 @@ public class Application {
 
 
         User user = userRepository.save(new User ("maria", "passpwrd"));
-        System.out.println("AAAAAAAAAAAAAAAAAAAAAAAAA");
-        System.out.println(user.getId());
+
 
         return (evt) -> Arrays.asList(
                 "jhoeller,dsyer,pwebb,ogierke,rwinch,mfisher,mpollack,jlong".split(","))

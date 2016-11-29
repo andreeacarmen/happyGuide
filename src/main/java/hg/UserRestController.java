@@ -34,7 +34,7 @@ class UserRestController {
             headers="Accept=application/json",
             produces= MediaType.APPLICATION_JSON_VALUE,
             consumes="*/*")
-    ResponseEntity<?> add(@PathVariable String userName, @RequestBody String pass) {
+    ResponseEntity<?> add(@PathVariable String userName, @RequestBody User user) {
 
         User newUser = userRepository.save(new User(userName, "parola"));
         URI location = ServletUriComponentsBuilder
