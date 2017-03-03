@@ -2,14 +2,64 @@
 <link rel="stylesheet" href="view/styles.css" />
 
 <style>
-    img {
-        display: block;
-        margin: 0 auto;
+
+    h1 {
+        margin: auto;
+        text-align: center;
+        width : 100%;
     }
+
+    body {
+        background-color: #EBF8FE;
+
+    }
+
+
 
 </style>
 <div >
-    <img src="resources/banner3.jpg" style="width:100%; height: 450px">
+    <img src="../resources/banner.jpg" style="width:100%; height: 400px">
+</div>
+<div class = body>
+    <div class="container">
+        <div class="row" >
+            <h1>Guides</h1>
+        </div>
+        <div class="row" style="padding-top: 20px">
+            <div class="form-group row">
+                <label for="example-text-input" class="col-xs-2 col-form-label">Search for: </label>
+                <div class="col-xs-10">
+                    <input class="form-control" type="text" value="" ng-model="locationSearchText">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-6" style="padding-left: 43px;border-style:none" ng-repeat="user in homeController.data | filter:locationSearchText">
+                <div class="row">
+                    <a class="col-xs-2" href="#/home/{{user.username}}" ng-controller="homeController as home">
+                        <img style="width: 80px; height: 70px; padding-right: 15px; display: inline; margin-top: 20px; margin-bottom: 20px;" src = "resources/no-pic-w.jpg" >
+                    </a>
+                    <div class="col-xs-10">
+                        <div class="row" style="padding-top: 25px">
+                            <span style="font-size:20px; font-weight: bold; color: #FFA48C; display: inline;">
+                                {{user.name}}
+                            </span>
+                        </div>
+                        <div class="row" >
+                            <span style="font-size:15px; display: inline;">
+                                Location: {{user.location}}
+                            </span>
+                        </div>
+                        <div class="row">
+                            <span style="font-size:15px; display: inline;">
+                                "{{user.description}}"
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 

@@ -14,13 +14,12 @@ app.use(express.static(__dirname));
 app.get('/', function(req, res){
     res.sendFile(__dirname + '/index.html');
 });
-
-app.config(function ($httpProvider) {
+/*app.config(function ($httpProvider) {
     $httpProvider.defaults.headers.common = {};
     $httpProvider.defaults.headers.post = {};
     $httpProvider.defaults.headers.put = {};
     $httpProvider.defaults.headers.patch = {};
-});
+});*/
 
 io.sockets.on('connection', function(socket){
     socket.on('send message', function(data){

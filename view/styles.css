@@ -135,3 +135,18 @@ p {
     -webkit-transform: translateY(-8px);
     transform: translateY(-8px);
 }
+
+.button {
+    background-color: #222222; /* Green */
+    border: none;
+    color: #8D9195;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 13px;
+}
+
+.btn .btn-primary {
+    margin-bottom : 2 cm;
+}

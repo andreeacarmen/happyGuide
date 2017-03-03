@@ -79,10 +79,9 @@ public class User {
         this.hourRate = hourRate;
     }
 
-
-    @JsonIgnore
     public String password;
     public String username;
+    public String name;
 
     public String getLanguage() {
         return language;
@@ -92,10 +91,14 @@ public class User {
         this.language = language;
     }
 
-    public User(String username, String password){
+    public User(String username, String name, String password, String location, String description, String email, int hourRate) {
         this.username = username;
+        this.name = name;
         this.password = password;
-
+        setDescription(description);
+        setEmail(email);
+        setHourRate(hourRate);
+        setLocation(location);
     }
 
     User() {

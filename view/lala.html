@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="view/styles.css" />
+    <meta charset="UTF-8">
+    <title>Guide</title>
+</head>
+<body >
+
+<div ng-init = "guideController.init()">
+    <img src="../resources/banner.jpg" style="width:100%; height: 450px">
+
+    <img style="width: 240px; height: 250px; padding-right: 15px; display: inline; margin-top: 20px; margin-bottom: 20px;" src = "resources/no-pic-w.jpg" >
+
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12" style="border-style:none">
+                <div class="row">
+                    <a class="col-xs-2">
+                    </a>
+                    <div class="col-xs-5">
+                        <div class="row">
+                            <span style="font-size:15px; font-weight: bold; display: inline;">
+                                {{guideController.user.username}}
+                            </span>
+                        </div>
+                        <div class="row">
+                            <span style="font-size:15px; font-weight: bold; display: inline;">
+                                Location: {{guideController.user.location}}
+                            </span>
+                        </div>
+                        <div class="row">
+                            <span style="font-size:15px; font-weight: bold; display: inline;">
+                                Description: {{guideController.user.description}}
+                            </span>
+                        </div>
+                    </div>
+                    <div class="col-xs-5">
+                        <div class="row">
+                            <span style="font-size:15px; font-weight: bold; display: inline;">
+                                Email: {{guideController.user.email}}
+                            </span>
+                        </div>
+                        <div class="row">
+                            <span style="font-size:15px; font-weight: bold; display: inline;">
+                                Phone: 0720665774
+                            </span>
+                        </div>
+                        <div class="row">
+                            <span style="font-size:15px; font-weight: bold; display: inline;">
+                                Interests: Art & Museums, Nightlife & Bars
+                            </span>
+                        </div>
+                        <div class="row">
+                            <span style="font-size:15px; font-weight: bold; display: inline;">
+                                Price: {{guideController.user.hourRate}}&euro;
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+
+                </div>
+                <img src="{{guideController.iconUrl}}">
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</body>
+</html>

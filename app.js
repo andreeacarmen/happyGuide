@@ -1,26 +1,37 @@
 // create the module and name it
-var myApp = angular.module('myApp', ['ngRoute']);
+var myApp = angular.module('myApp', ['ngRoute', 'ngCookies']);
 
 // configure the routes
 myApp.config(function($routeProvider) {
 
     $routeProvider
         .when('/', {
-            templateUrl : 'view/home.html'
+            templateUrl : 'view/home.html',
+            controllerAs: 'homeController',
+            controller: 'homeController'
         })
         .when('/home', {
-            templateUrl : 'view/home.html'
-            })
-        .when('/register', {
-            templateUrl : 'view/signup.html',
-            controllerAs: 'signUpController',
-            controller  : 'signUpController'
+            templateUrl : 'view/home.html',
+            controllerAs: 'homeController',
+            controller: 'homeController'
         })
         .when('/about',{
-            templateUrl: 'view/about.html'
+                    templateUrl: 'view/edit.html',
+                    controller: 'editController',
+                    controllerAs: 'editController'
+                })
+        .when('/register', {
+            templateUrl : 'view/signup.html',
+            controllerAs: 'signUp',
+            controller  : 'signUpController'
         })
         .when('/contact',{
             templateUrl: 'view/contact.html'
+        })
+        .when('/home/:id',{
+            templateUrl: 'view/guide.html',
+            controllerAs: 'guideController',
+            controller: 'guideController'
         })
 });
 

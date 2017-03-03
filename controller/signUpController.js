@@ -1,3 +1,4 @@
+
 /**
  * Created by Andreea on 22.11.2016.
  */
@@ -8,26 +9,35 @@
         var signUpController = function($scope, utilService){
             var self = this;
 
-            utilService.makeGETReq('http://localhost:8080/users/maria').then(function success(response) {
-                console.log(response.data);
-            });
+            $scope.submit = function() {
 
-            var data = {
-                "activities": null,
-                "description": null,
-                "language": null,
-                "location": null,
-                "email": null,
-                "telefonNr": null,
-                "hourRate": 0,
-                "username": "ION"
-            };
+                var endpoint = 'http://localhost:8080/users/new';
+                var art = document.getElementById('artCheckBox').checked ? 1 : 0;
+                var shopping = document.getElementById('shoppingCheckBox').checked ? 1 : 0;
+                var clubs = document.getElementById('clubsCheckBox').checked ? 1 : 0;
 
-            var endpoint = 'http://localhost:8080/users/ion/new';
 
-            utilService.makePOSTReq(endpoint, data).then(function success(response){
-                console.log(response);
-            })
+                self.data = {
+                    "activities":null,
+                    "description": $scope.description,
+                    "language": null,
+                    "location": $scope.city,
+                    "email": $scope.email,
+                    "telefonNr": null,
+                    "name": $scope.name,
+                    "hourRate": $scope.price,
+                    "username": $scope.user,
+                    "password": $scope.password
+                };
+
+                console.log("LAA");
+                utilService.makePOSTReq(endpoint,self.data).then(function success(response){
+                    console.log("facem");
+                    console.log(response.data);
+                });
+
+                window.location.replace("#/home");
+        };
 
         };
 
